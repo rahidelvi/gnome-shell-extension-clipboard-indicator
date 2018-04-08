@@ -154,7 +154,6 @@ const ClipboardIndicator = Lang.Class({
 
             that.scrollViewFavoritesMenuSection.actor.add_actor(favoritesScrollView);
 
-            that.menu.addMenuItem(that.scrollViewFavoritesMenuSection);
 
             // History
             that.historySection = new PopupMenu.PopupMenuSection();
@@ -169,6 +168,7 @@ const ClipboardIndicator = Lang.Class({
             that.scrollViewMenuSection.actor.add_actor(historyScrollView);
 
             that.menu.addMenuItem(that.scrollViewMenuSection);
+            that.menu.addMenuItem(that.scrollViewFavoritesMenuSection);
 
             // Add cached items
             clipHistory.forEach(function (buffer) {
