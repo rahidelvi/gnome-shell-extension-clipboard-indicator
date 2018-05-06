@@ -44,7 +44,7 @@ let PRIVATEMODE          = false;
 let NOTIFY_ON_COPY       = true;
 let MAX_TOPBAR_LENGTH    = 15;
 let TOPBAR_DISPLAY_MODE  = 1; //0 - only icon, 1 - only clipbord content, 2 - both
-let FAVORITES_ON_BOTTOM  = true;
+let FAVORITES_ON_BOTTOM  = false;
 
 const ClipboardIndicator = Lang.Class({
     Name: 'ClipboardIndicator',
