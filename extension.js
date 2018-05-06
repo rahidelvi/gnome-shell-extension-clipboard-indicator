@@ -44,6 +44,7 @@ let PRIVATEMODE          = false;
 let NOTIFY_ON_COPY       = true;
 let MAX_TOPBAR_LENGTH    = 15;
 let TOPBAR_DISPLAY_MODE  = 1; //0 - only icon, 1 - only clipbord content, 2 - both
+let FAVORITES_ON_BOTTOM  = true;
 
 const ClipboardIndicator = Lang.Class({
     Name: 'ClipboardIndicator',
@@ -154,6 +155,10 @@ const ClipboardIndicator = Lang.Class({
 
             that.scrollViewFavoritesMenuSection.actor.add_actor(favoritesScrollView);
 
+            if (FAVORITES_ON_BOTTOM == false) {
+              that.menu.addMenuItem(that.scrollViewFavoritesMenuSection);
+            }
+
 
             // History
             that.historySection = new PopupMenu.PopupMenuSection();
@@ -168,7 +173,10 @@ const ClipboardIndicator = Lang.Class({
             that.scrollViewMenuSection.actor.add_actor(historyScrollView);
 
             that.menu.addMenuItem(that.scrollViewMenuSection);
-            that.menu.addMenuItem(that.scrollViewFavoritesMenuSection);
+
+            if (FAVORITES_ON_BOTTOM == true) {
+              that.menu.addMenuItem(that.scrollViewFavoritesMenuSection);
+            }
 
             // Add cached items
             clipHistory.forEach(function (buffer) {
@@ -256,7 +264,7 @@ const ClipboardIndicator = Lang.Class({
         this._setEntryLabel(menuItem);
         this.clipItemsRadioGroup.push(menuItem);
 
-	// Favorite button
+  // Favorite button
         let icon_name = favorite ? 'starred-symbolic' : 'non-starred-symbolic';
         let iconfav = new St.Icon({
             icon_name: icon_name,
@@ -282,7 +290,7 @@ const ClipboardIndicator = Lang.Class({
             })
         );
 
-	// Delete button
+  // Delete button
         let icon = new St.Icon({
             icon_name: 'edit-delete-symbolic', //'mail-attachment-symbolic',
             style_class: 'system-status-icon'
