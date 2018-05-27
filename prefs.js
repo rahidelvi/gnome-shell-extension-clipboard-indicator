@@ -17,6 +17,7 @@ const Fields = {
     CACHE_ONLY_FAVORITE : 'cache-only-favorites',
     DELETE             : 'enable-deletion',
     NOTIFY_ON_COPY     : 'notify-on-copy',
+    FAVORITES_ON_BOTTOM : 'favorites-on-bottom',
     ENABLE_KEYBINDING  : 'enable-keybindings',
     TOPBAR_PREVIEW_SIZE: 'topbar-preview-size',
     TOPBAR_DISPLAY_MODE_ID    : 'display-mode'
@@ -142,6 +143,11 @@ const App = new Lang.Class({
         });
         let notificationLabel  = new Gtk.Label({
             label: _("Show notification on copy"),
+            hexpand: true,
+            halign: Gtk.Align.START
+        });
+        let notificationLabel  = new Gtk.Label({
+            label: _("Show favorites on bottom"),
             hexpand: true,
             halign: Gtk.Align.START
         });

@@ -39,7 +39,7 @@
         </description>
         <range min="10" max="100"/>
     </key>
-    
+
     <key type="i" name="topbar-preview-size">
         <default>10</default>
         <summary>Amount of visible characters in topbar </summary>
@@ -74,6 +74,14 @@
         <summary>Show notification on copy to clipboard</summary>
         <description>
             If true, a notification is shown when content is copied to clipboard.
+        </description>
+    </key>
+
+    <key name="favorites-on-bottom" type="b">
+      <default>false</default>
+        <summary>Show favorites on bottom of list</summary>
+        <description>
+            If true, items marked as favorites will show at the bottom of your list of copied items.
         </description>
     </key>
 
