@@ -146,7 +146,7 @@ const App = new Lang.Class({
             hexpand: true,
             halign: Gtk.Align.START
         });
-        let notificationLabel  = new Gtk.Label({
+        let favoritesLabel  = new Gtk.Label({
             label: _("Show favorites on bottom"),
             hexpand: true,
             halign: Gtk.Align.START
@@ -181,6 +181,7 @@ const App = new Lang.Class({
         this.main.attach(displayModeLabel   , 2, 7, 2, 1);
         this.main.attach(topbarPreviewLabel , 2, 8, 2 ,1);
         this.main.attach(keybindingLabel    , 2, 9, 2 ,1);
+        this.main.attach(favoritesLabel     , 2, 10, 2, 1);
 
         this.main.attach(this.field_size                   , 4, 1, 2, 1);
         this.main.attach(this.field_preview_size           , 4, 2, 2, 1);
